@@ -1,0 +1,19 @@
+.profile-image-upload {
+  display: flex;
+  flex-direction: column; /* Aligns children vertically */
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.profile-circle {
+  width: 3.5rem;
+  height: 3.5rem; /* Added height for older browsers that don't support aspect-ratio */
+  background-color: var(--background-color);
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center center;
+  cursor: pointer;
+  transition: filter 0.3s;
+  margin-bottom: -1rem;
+}
