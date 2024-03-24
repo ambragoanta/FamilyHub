@@ -1,6 +1,6 @@
 .profile-image-upload {
   display: flex;
-  flex-direction: column; /* Aligns children vertically */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-bottom: 1rem;
@@ -8,7 +8,7 @@
 
 .profile-circle {
   width: 3.5rem;
-  height: 3.5rem; /* Added height for older browsers that don't support aspect-ratio */
+  height: 3.5rem;
   background-color: var(--background-color);
   border-radius: 50%;
   background-size: cover;
@@ -18,6 +18,6 @@
   margin-bottom: -1rem;
 }
 
-.user-name{
+.user-name {
   color: var(--main-text-color);
 }

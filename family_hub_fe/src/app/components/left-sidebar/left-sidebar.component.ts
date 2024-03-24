@@ -8,11 +8,12 @@ import { Router } from "@angular/router";
 })
 export class LeftSidebarComponent {
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
+  }
 
-  activeButtonIndex: number = 0; // Assuming 'All Events' is initially active
+  activeButtonIndex: number = 0;
 
-  setActiveButton(index: number, path :string): void {
+  setActiveButton(index: number, path: string): void {
     this.activeButtonIndex = index;
     this.router.navigate([path]);
   }

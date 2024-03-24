@@ -1,7 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { DatePipe } from '@angular/common';
-import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-date-time',
@@ -13,14 +12,15 @@ export class DateTimeComponent implements OnInit, OnDestroy {
   dateTime$: Observable<{ time: string; date: string }> | undefined;
   private subscription: Subscription | undefined;
 
-  constructor(private datePipe: DatePipe) {}
+  constructor(private datePipe: DatePipe) {
+  }
 
   ngOnInit() {
     this.dateTime$ = new Observable<{ time: string, date: string }>((observer) => {
       setInterval(() => {
         const time = this.datePipe.transform(new Date(), 'HH:mm')!;
         const date = this.datePipe.transform(new Date(), 'd MMMM yyyy')!;
-        observer.next({ time, date });
+        observer.next({time, date});
       }, 1000);
     });
     this.subscription = this.dateTime$.subscribe();

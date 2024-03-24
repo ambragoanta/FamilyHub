@@ -7,7 +7,8 @@ import { ThemeService } from "../../services/theme.service";
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  constructor(protected themeService: ThemeService) {}
+  constructor(protected themeService: ThemeService) {
+  }
 
   goBack() {
     window.history.back();

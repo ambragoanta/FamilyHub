@@ -7,7 +7,7 @@ body {
   font-family: 'Noto Sans Display', sans-serif;
 }
 
-:root{
+:root {
   --navbar-sidebar-color: #ffffff;
   --background-color: #f0f0f0;
   --main-text-color: #000000;
@@ -19,7 +19,7 @@ body {
   --transition-duration: 200ms;
 }
 
-.dark{
+.dark {
   --navbar-sidebar-color: #141414;
   --background-color: #1A1A1A;
   --main-text-color: #ffffff;
@@ -41,11 +41,11 @@ body {
   max-height: calc(100vh - var(--navbar-height));
 }
 
-.mr-2rem{
+.mr-2rem {
   margin-right: 2rem;
 }
 
-.mt-2rem{
+.mt-2rem {
   margin-top: 2rem;
 }
 
