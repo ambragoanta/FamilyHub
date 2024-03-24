@@ -17,3 +17,7 @@
   transition: filter 0.3s;
   margin-bottom: -1rem;
 }
+
+.user-name{
+  color: var(--main-text-color);
+}

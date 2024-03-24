@@ -10,6 +10,7 @@
   display: inline-block;
   vertical-align: middle;
   font-size: 18px;
+  color: var(--main-text-color);
 }
 
 .date-time .time{
