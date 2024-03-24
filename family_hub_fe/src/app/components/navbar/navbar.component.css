@@ -21,11 +21,10 @@
 .title p {
   font-size: 2em;
   font-weight: bold;
-  margin: 0;
   color: var(--button-active-color);
   font-family: 'Nunito', sans-serif;
 }
 
 .arrow-back{
-
+  cursor: pointer;
 }
