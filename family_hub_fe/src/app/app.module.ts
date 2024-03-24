@@ -7,6 +7,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { LeftSidebarComponent } from './components/left-sidebar/left-sidebar.component';
 import { ProfilePictureComponent } from './components/profile-picture/profile-picture.component';
 import { DateTimeComponent } from './components/date-time/date-time.component';
+import { FamilyMembersComponent } from './components/family-members/family-members.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { DateTimeComponent } from './components/date-time/date-time.component';
     NavbarComponent,
     LeftSidebarComponent,
     ProfilePictureComponent,
-    DateTimeComponent
+    DateTimeComponent,
+    FamilyMembersComponent
   ],
   imports: [
     BrowserModule,

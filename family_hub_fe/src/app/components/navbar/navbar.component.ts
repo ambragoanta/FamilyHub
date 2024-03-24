@@ -8,4 +8,8 @@ import { ThemeService } from "../../services/theme.service";
 })
 export class NavbarComponent {
   constructor(protected themeService: ThemeService) {}
+
+  goBack() {
+    window.history.back();
+  }
 }

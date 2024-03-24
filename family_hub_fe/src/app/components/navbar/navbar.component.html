@@ -1,6 +1,7 @@
 <div class="navbar">
   <img
     *ngIf="!themeService.isDarkMode"
+    (click)="goBack()"
     src="assets/icons/arrow-dark.svg"
     alt="arrow-back"
     height="20"
@@ -9,6 +10,7 @@
   />
   <img
     *ngIf="themeService.isDarkMode"
+    (click)="goBack()"
     src="assets/icons/arrow-light.svg"
     alt="arrow-back"
     height="20"

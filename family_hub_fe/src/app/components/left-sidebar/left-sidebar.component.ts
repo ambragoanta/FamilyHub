@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-left-sidebar',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./left-sidebar.component.css']
 })
 export class LeftSidebarComponent {
+
+  constructor(private router: Router) {}
+
+  activeButtonIndex: number = 0; // Assuming 'All Events' is initially active
+
+  setActiveButton(index: number, path :string): void {
+    this.activeButtonIndex = index;
+    this.router.navigate([path]);
+  }
 
 }
