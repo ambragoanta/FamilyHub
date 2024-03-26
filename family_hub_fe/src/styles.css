@@ -1,1 +1,52 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Noto Sans Display', sans-serif;
+}
+
+:root {
+  --navbar-sidebar-color: #ffffff;
+  --background-color: #f0f0f0;
+  --main-text-color: #000000;
+  --active-text-color: #ffffff;
+  --button-active-color: #1BA098;
+
+  --navbar-height: 7rem;
+
+  --transition-duration: 200ms;
+}
+
+.dark {
+  --navbar-sidebar-color: #141414;
+  --background-color: #1A1A1A;
+  --main-text-color: #ffffff;
+  --active-text-color: #000000;
+  --button-active-color: #3ED6B9;
+}
+
+.app-content {
+  max-height: 100vh;
+}
+
+.app-navbar {
+  width: 100%;
+}
+
+.app {
+  display: flex;
+  overflow: auto;
+  max-height: calc(100vh - var(--navbar-height));
+}
+
+.mr-2rem {
+  margin-right: 2rem;
+}
+
+.mt-2rem {
+  margin-top: 2rem;
+}
+
+

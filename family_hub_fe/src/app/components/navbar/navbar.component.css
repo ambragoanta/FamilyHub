@@ -1,0 +1,44 @@
+.navbar {
+  background-color: var(--navbar-sidebar-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  width: 100%;
+  height: 100px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-container {
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.title p {
+  font-size: 2em;
+  font-weight: bold;
+  color: var(--button-active-color);
+  font-family: 'Nunito', sans-serif;
+}
+
+.arrow-back {
+  cursor: pointer;
+}
+
+.theme {
+  transform: translateY(0rem);
+  margin-right: 1.5rem;
+  transition: all var(--transition-duration) ease-in-out;
+  aspect-ratio: 1/1;
+  position: relative;
+  top: 0.1rem;
+
+  &:hover {
+    cursor: pointer;
+    transform: translateY(0rem) scale(1.1);
+  }
+}

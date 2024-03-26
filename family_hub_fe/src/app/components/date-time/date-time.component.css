@@ -1,0 +1,18 @@
+.date-time {
+  font-family: 'Noto Sans', sans-serif;
+  text-align: center;
+  line-height: 1.5;
+  margin-left: 2rem;
+}
+
+.date-time .time,
+.date-time .date {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 18px;
+  color: var(--main-text-color);
+}
+
+.date-time .time {
+  font-size: 25px;
+}

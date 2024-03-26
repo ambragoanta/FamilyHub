@@ -1,0 +1,43 @@
+<div class="navbar">
+  <img
+    *ngIf="!themeService.isDarkMode"
+    (click)="goBack()"
+    src="assets/icons/arrow-dark.svg"
+    alt="arrow-back"
+    height="20"
+    width="40"
+    class="arrow-back"
+  />
+  <img
+    *ngIf="themeService.isDarkMode"
+    (click)="goBack()"
+    src="assets/icons/arrow-light.svg"
+    alt="arrow-back"
+    height="20"
+    width="40"
+    class="arrow-back"
+  />
+  <app-date-time></app-date-time>
+  <div class="navbar-container title">
+    <p>FamilyHub</p>
+  </div>
+  <img
+    *ngIf="!themeService.isDarkMode"
+    (click)="themeService.toggleTheme()"
+    src="assets/icons/dark-theme.svg"
+    alt="Activate dark mode"
+    height="40"
+    width="40"
+    class="theme"
+  />
+  <img
+    *ngIf="themeService.isDarkMode"
+    (click)="themeService.toggleTheme()"
+    src="assets/icons/light-theme.svg"
+    alt="Activate light mode"
+    height="40"
+    width="40"
+    class="theme"
+  />
+  <app-profile-picture></app-profile-picture>
+</div>

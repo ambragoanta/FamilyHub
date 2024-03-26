@@ -1,0 +1,6 @@
+<div class="date-time">
+  <ng-container *ngIf="dateTime$ | async as dateTime">
+    <span class="time">{{ dateTime.time }}</span>
+    <span class="date">{{ dateTime.date }}</span>
+  </ng-container>
+</div>

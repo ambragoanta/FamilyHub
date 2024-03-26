@@ -1,0 +1,23 @@
+.profile-image-upload {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.profile-circle {
+  width: 3.5rem;
+  height: 3.5rem;
+  background-color: var(--background-color);
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center center;
+  cursor: pointer;
+  transition: filter 0.3s;
+  margin-bottom: -1rem;
+}
+
+.user-name {
+  color: var(--main-text-color);
+}
