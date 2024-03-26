@@ -1,4 +1,4 @@
-package org.example.family_hub_be
+package com.upt.family_hub_be
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

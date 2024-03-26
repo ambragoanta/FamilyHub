@@ -1,4 +1,4 @@
-package org.example.family_hub_be
+package com.upt.family_hub_be
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
