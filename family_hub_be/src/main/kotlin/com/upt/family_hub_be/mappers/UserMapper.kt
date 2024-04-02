@@ -13,7 +13,8 @@ class UserMapper(private val passwordEncoder: PasswordEncoder) {
         UserProfile (
             userId = userProfileDto.userId,
             username = userProfileDto.username,
-            password = passwordEncoder.encode(userProfileDto.password)
+            password = passwordEncoder.encode(userProfileDto.password),
+            role = userProfileDto.role,
         )
 
 
@@ -21,6 +22,8 @@ class UserMapper(private val passwordEncoder: PasswordEncoder) {
         UserProfileDTO(
             userId = userProfile.userId,
             username = userProfile.username,
-            password = userProfile.password
+            password = userProfile.password,
+            role = userProfile.role,
+            events = userProfile.events?.map { it.eventId }?.toMutableSet()
         )
 }

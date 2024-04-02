@@ -17,11 +17,15 @@ import org.springframework.web.bind.annotation.RestController
 class UserController(
     private val userService: UserService
 ) {
-    @PostMapping
+
+    @GetMapping
+    fun getAll(): List<UserProfileDTO> = userService.getAll()
+
+    @PostMapping("/auth")
     fun create(@RequestBody userProfileDto: UserProfileDTO): ResponseEntity<UserProfile> =
         ResponseEntity(userService.createUser(userProfileDto), HttpStatus.CREATED)
 
-    @GetMapping
+    @GetMapping("/auth")
     fun showUser(authentication: Authentication): ResponseEntity<String> =
         ResponseEntity(authentication.name, HttpStatus.OK)
 }

@@ -3,13 +3,14 @@ package com.upt.family_hub_be.service
 import com.upt.family_hub_be.dto.EventDTO
 import com.upt.family_hub_be.entity.Event
 import com.upt.family_hub_be.repository.EventRepository
+import com.upt.family_hub_be.repository.UserRepository
 import org.springframework.stereotype.Service
-import java.sql.Date
-import java.sql.Time
 
 @Service
 class EventService(
     private val eventRepository: EventRepository,
+    private val userService: UserService,
+    private val userRepository: UserRepository
 ) {
     fun getAll(): List<EventDTO> = eventRepository.findAll().map { EventDTO(it) }
 
@@ -36,12 +37,25 @@ class EventService(
     }
 
     fun create(eventDto: EventDTO): EventDTO {
-
-        val event = Event(
-            title = eventDto.title,
-            dueDate = Date.valueOf(eventDto.dueDate),
-            dueTime = Time.valueOf(eventDto.dueTime)
-        )
-        return EventDTO(eventRepository.save(event))
+        try {
+            val userProfiles = eventDto.users?.map { userId ->
+                userService.findById(userId)
+            }
+            val event = Event(
+                title = eventDto.title,
+                dueDate = eventDto.dueDate,
+                dueTime = eventDto.dueTime,
+                users = userProfiles?.toMutableSet()
+            ).let{
+                eventRepository.save(it)
+            }
+            userProfiles?.forEach {
+                it.events?.add(event)
+                userRepository.save(it)
+            }
+            return EventDTO(event)
+        } catch (e: Exception) {
+            throw RuntimeException("User Group could not be created", e)
+        }
     }
 }
