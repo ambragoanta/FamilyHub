@@ -3,7 +3,7 @@ package com.upt.family_hub_be.dto
 import com.upt.family_hub_be.entity.Event
 
 data class EventDTO(
-    val eventId: Long?,
+    val eventId: Long,
     var title: String?,
     var dueDate: String?,
     var dueTime: String?

@@ -9,7 +9,7 @@ import java.sql.Time
 data class Event(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val eventId: Long? = 0,
+    val eventId: Long = 0,
     var title: String? = "",
     var dueDate: Date? = null,
     var dueTime: Time? = null
