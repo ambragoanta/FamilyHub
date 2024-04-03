@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Renderer2 } from '@angular/core';
+import { NavigationEnd, Router } from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'family_hub_fe';
+
 }
