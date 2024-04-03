@@ -17,6 +17,7 @@ body {
   --main-text-color: #000000;
   --active-text-color: #ffffff;
   --button-active-color: #1BA098;
+  --auth-button: #1BA098;
 
   --navbar-height: 7rem;
 
@@ -26,7 +27,6 @@ body {
 .dark {
   --navbar-sidebar-color: #141414;
   --background-color: #1A1A1A;
-  --auth-background-color: #3ED6B9;
   --main-text-color: #ffffff;
   --active-text-color: #000000;
   --button-active-color: #3ED6B9;
