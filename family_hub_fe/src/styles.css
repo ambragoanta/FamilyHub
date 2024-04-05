@@ -1,18 +1,23 @@
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+
 body {
   background-color: var(--background-color);
   margin: 0;
   padding: 0;
   height: 100%;
   width: 100%;
-  font-family: 'Noto Sans Display', sans-serif;
+  font-family: 'Noto Sa ns Display', sans-serif;
 }
+
 
 :root {
   --navbar-sidebar-color: #ffffff;
   --background-color: #f0f0f0;
+  --auth-background-color: #1BA098;
   --main-text-color: #000000;
   --active-text-color: #ffffff;
   --button-active-color: #1BA098;
+  --auth-button: #1BA098;
 
   --navbar-height: 7rem;
 
@@ -41,6 +46,10 @@ body {
   max-height: calc(100vh - var(--navbar-height));
 }
 
+.auth-title{
+  text-align: center;
+}
+
 .mr-2rem {
   margin-right: 2rem;
 }
@@ -49,4 +58,19 @@ body {
   margin-top: 2rem;
 }
 
+.mb-2rem{
+  margin-bottom: 2rem;
+}
 
+.mb-5rem{
+  margin-bottom: 5rem;
+}
+
+.mt-5rem{
+  margin-bottom: 5rem;
+}
+
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

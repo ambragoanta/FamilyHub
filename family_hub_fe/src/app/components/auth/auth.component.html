@@ -1,0 +1,21 @@
+<div class="auth-container">
+  <mat-card>
+    <mat-card-content>
+      <div class="title">
+        <p>FamilyHub</p>
+      </div>
+    </mat-card-content>
+    <br>
+    <mat-card-content>
+      <app-login-form *ngIf="showLogin"></app-login-form>
+      <app-register-form *ngIf="!showLogin"></app-register-form>
+    </mat-card-content>
+    <br>
+    <mat-card-content>
+      <button mat-button (click)="showLogin = true" [disabled]="showLogin">Login</button>
+      <button mat-button (click)="showLogin = false" [disabled]="!showLogin">Register</button>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+
