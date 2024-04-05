@@ -16,5 +16,6 @@ data class EventDTO(
         title = event.title,
         dueDate =  event.dueDate,
         dueTime = event.dueTime,
+        users = event.users?.map { it.userId }?.toMutableSet()
     )
 }
