@@ -1,5 +1,5 @@
 .auth-container {
-  background-image: linear-gradient(var(--auth-background-color), white);
+  background-image: linear-gradient(#1BA098, white);
   margin: 0;
   height: 100%;
   width: 100%;
