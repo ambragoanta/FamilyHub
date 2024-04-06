@@ -1,5 +1,7 @@
 import { Component, Renderer2 } from '@angular/core';
 import { NavigationEnd, Router } from "@angular/router";
+import { Observable } from "rxjs";
+import { AuthService } from "./services/auth.service";
 
 @Component({
   selector: 'app-root',
@@ -8,5 +10,9 @@ import { NavigationEnd, Router } from "@angular/router";
 })
 export class AppComponent {
   title = 'family_hub_fe';
+  isLoggedIn: boolean;
 
+  constructor(private authService: AuthService) {
+    this.isLoggedIn = this.authService.isLoggedIn();
+  }
 }

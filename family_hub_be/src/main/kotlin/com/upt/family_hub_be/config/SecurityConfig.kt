@@ -36,7 +36,7 @@ class SecurityConfig {
 //            }
             .authorizeHttpRequests {
                 it.requestMatchers(HttpMethod.OPTIONS).permitAll()
-                    .requestMatchers(HttpMethod.POST,"users").anonymous()
+                    .requestMatchers(HttpMethod.POST,"users/auth").anonymous()
                     .anyRequest().authenticated()
             }
             .formLogin (Customizer.withDefaults())

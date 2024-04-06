@@ -21,6 +21,7 @@
   <div class="navbar-container title">
     <p>FamilyHub</p>
   </div>
+  <app-profile-picture></app-profile-picture>
   <img
     *ngIf="!themeService.isDarkMode"
     (click)="themeService.toggleTheme()"
@@ -39,5 +40,22 @@
     width="40"
     class="theme"
   />
-  <app-profile-picture></app-profile-picture>
+  <img
+    *ngIf="!themeService.isDarkMode"
+    (click)="onLogout()"
+    src="assets/icons/logout-light.svg"
+    alt="Logout"
+    height="40"
+    width="40"
+    class="theme"
+  />
+  <img
+    *ngIf="themeService.isDarkMode"
+    (click)="onLogout()"
+    src="assets/icons/logout-dark.svg"
+    alt="Logout"
+    height="40"
+    width="40"
+    class="theme"
+  />
 </div>
