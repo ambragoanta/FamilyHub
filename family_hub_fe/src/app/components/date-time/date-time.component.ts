@@ -21,7 +21,7 @@ export class DateTimeComponent implements OnInit, OnDestroy {
         const time = this.datePipe.transform(new Date(), 'HH:mm')!;
         const date = this.datePipe.transform(new Date(), 'd MMMM yyyy')!;
         observer.next({time, date});
-      }, 1000);
+      }, 1);
     });
     this.subscription = this.dateTime$.subscribe();
   }

@@ -1,0 +1,15 @@
+div {
+  margin: 3rem 3rem 3rem 16rem;
+}
+
+h1{
+  color: var(--main-text-color);
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  div {
+    margin: 3rem 3rem 3rem 18rem;
+  }
+}
+

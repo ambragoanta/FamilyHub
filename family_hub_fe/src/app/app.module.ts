@@ -18,8 +18,21 @@ import { MatInputModule } from '@angular/material/input';
 import { RegisterFormComponent } from './components/register-form/register-form.component';
 import { ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
-
-
+import { EventFormComponent } from './components/event-form/event-form.component';
+import { MainframeComponent } from './components/mainframe/mainframe.component';
+import { EventCreateComponent } from './components/event-create/event-create.component';
+import { EventEditComponent } from './components/event-edit/event-edit.component';
+import { MatDatepickerModule } from "@angular/material/datepicker";
+import { MatNativeDateModule } from "@angular/material/core";
+import {
+  NgxMatDatetimePickerModule,
+  NgxMatNativeDateModule,
+  NgxMatTimepickerModule,
+} from '@angular-material-components/datetime-picker';
+import {MatIconModule} from '@angular/material/icon';
+import { MatSelectModule } from '@angular/material/select';
+import { FamilyHubComponent } from './components/family-hub/family-hub.component';
+import { DatePipe } from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -32,6 +45,11 @@ import { HttpClientModule } from "@angular/common/http";
     AuthComponent,
     LoginFormComponent,
     RegisterFormComponent,
+    EventFormComponent,
+    MainframeComponent,
+    EventCreateComponent,
+    EventEditComponent,
+    FamilyHubComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,8 +60,16 @@ import { HttpClientModule } from "@angular/common/http";
     MatInputModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    NgxMatTimepickerModule,
+    NgxMatDatetimePickerModule,
+    NgxMatTimepickerModule,
+    NgxMatNativeDateModule,
+    MatIconModule,
+    MatSelectModule,
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
