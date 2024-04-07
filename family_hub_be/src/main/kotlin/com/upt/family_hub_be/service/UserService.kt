@@ -25,4 +25,7 @@ class UserService(
         }
         return userRepository.save(userMapper.fromDto(userProfileDto))
     }
+
+    fun findByUsername(username: String): UserProfile? = userRepository.findUserByUsername(username)
+
 }

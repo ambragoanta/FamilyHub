@@ -13,10 +13,12 @@ body {
 :root {
   --navbar-sidebar-color: #ffffff;
   --background-color: #f0f0f0;
+  --background-color2: #f0f0f0;
   --main-text-color: #000000;
   --active-text-color: #ffffff;
   --button-active-color: #1BA098;
   --auth-button: #1BA098;
+  --input-text-color: #1A1A1A;
 
   --navbar-height: 7rem;
 
@@ -29,6 +31,8 @@ body {
   --main-text-color: #ffffff;
   --active-text-color: #000000;
   --button-active-color: #3ED6B9;
+  --input-color:  #ffffff;
+  --input-text-color: #f0f0f0;
 }
 
 .app-content {
@@ -57,6 +61,10 @@ body {
   margin-top: 2rem;
 }
 
+.mb-1rem{
+  margin-bottom: 1rem;
+}
+
 .mb-2rem{
   margin-bottom: 2rem;
 }
@@ -69,6 +77,130 @@ body {
   margin-bottom: 5rem;
 }
 
+.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__leading,.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__notch,.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__trailing {
+  border-color: var(--button-active-color)  !important;
+}
+
+.mdc-text-field--outlined:not(.mdc-text-field--disabled):not(.mdc-text-field--focused):hover .mdc-notched-outline .mdc-notched-outline__leading,.mdc-text-field--outlined:not(.mdc-text-field--disabled):not(.mdc-text-field--focused):hover .mdc-notched-outline .mdc-notched-outline__notch,.mdc-text-field--outlined:not(.mdc-text-field--disabled):not(.mdc-text-field--focused):hover .mdc-notched-outline .mdc-notched-outline__trailing {
+  border-color: var(--button-active-color) !important;
+}
+
+.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-floating-label {
+  color: var(--input-color) !important;
+}
+
+.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-text-field__input {
+  color: var(--input-color) !important;
+}
+
+.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-text-field__input::placeholder {
+  color: var(--input-text-color) !important;
+}
+
+/* Change the text color of the datepicker input when not disabled */
+.mat-input-element:not(.mat-input-element--disabled) {
+  color: var(--input-color) !important;
+}
+
+/* Change the placeholder text color of the datepicker input */
+.mat-input-element:not(.mat-input-element--disabled)::placeholder {
+  color: var(--input-text-color) !important;
+}
+
+/* If you need to change the color of the calendar popup, you would need additional styles */
+.mat-calendar {
+  background-color: var(--navbar-sidebar-color) !important;
+  color: var(--input-color) !important;
+}
+
+/* Style for the selected date */
+.mat-calendar-body-selected {
+  background-color: var(--button-active-color) !important;
+}
+
+/* Style for the current date */
+.mat-calendar-body-today:not(.mat-calendar-body-selected) {
+  border-color: var(--button-active-color) !important;
+}
+
+/* Change the text color for dates in the calendar */
+.mat-calendar-body-cell-content {
+  color: var(--input-text-color) !important;
+}
+
+.mat-calendar-period-button {
+  color: var(--input-text-color) !important;
+}
+.mat-datepicker-content,
+.mat-calendar
+time-container{
+  border: 1px solid var(--button-active-color) !important;
+}
+
+.time-container{
+  background-color: var(--navbar-sidebar-color) !important;
+}
+
+.time-container {
+  background-color: var(--navbar-sidebar-color) !important; /* Your existing rule for the background */
+}
+/* Change the text color of the input to white */
+.mat-mdc-input-element {
+  color: var(--input-text-color) !important;
+}
+.mat-mdc-button-touch-target{
+  color: var(--input-text-color) !important;
+}
+
+.mat-datepicker-toggle button{
+  color: var(--input-text-color) !important;
+}
+
+.mat-mdc-focus-indicator{
+  color: var(--input-text-color) !important;
+}
+
+.mat-mdc-button-touch-target{
+  color: var(--input-text-color) !important;
+}
+
+.mat-ripple mat-mdc-button-ripple{
+  color: var(--input-text-color) !important;
+}
+
+.mat-mdc-select-panel {
+  background-color: var(--navbar-sidebar-color)  !important;
+}
+
+.mdc-list-item__primary-text{
+  color: var(--input-text-color) !important;
+}
+
+.mat-pseudo-checkbox mat-mdc-option-pseudo-checkbox mat-pseudo-checkbox-full ng-star-inserted{
+  color: var(--input-text-color) !important;
+}
+
+/* Change the color of the primary text in list items within the dropdown */
+.mat-mdc-select-panel .mdc-list-item__primary-text,
+.mat-mdc-select-panel .mat-option-text {
+  color: var(--input-text-color) !important;
+}
+
+/* Change the color of the checkbox for multiple selection, if applicable */
+.mat-mdc-select-panel .mat-pseudo-checkbox,
+.mat-mdc-select-panel .mat-mdc-option-pseudo-checkbox .mat-pseudo-checkbox-full {
+  color: var(--input-text-color) !important;
+}
+
+/* Change the text color of the selected value */
+.mat-select-value {
+  color: var(--input-text-color) !important;
+}
+
+/* Change the dropdown arrow color */
+.mat-select-arrow, .mat-select-arrow-wrapper::after {
+  color: var(--input-text-color) !important; /* Or use 'border-color' for SVG arrows */
+}
 
 
 html, body { height: 100%; }

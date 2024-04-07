@@ -12,6 +12,7 @@ data class Event(
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val eventId: Long = 0,
     var title: String? = "",
+    var description: String? = "",
     var dueDate: Date? = null,
     var dueTime: Time? = null,
 
@@ -26,6 +27,7 @@ data class Event(
 ) {
     fun update(eventDto: EventDTO) {
         eventDto.title?.let { title = it }
+        eventDto.description?.let { description = it }
         eventDto.dueDate?.let { dueDate = it }
         eventDto.dueTime?.let { dueTime = it }
         eventDto.users?.let { updatedUsers ->

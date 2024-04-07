@@ -1,0 +1,29 @@
+.title-description{
+  & mat-form-field {
+    width: 28rem;
+    font-size: 1em;
+  }
+}
+
+.participants{
+  & mat-form-field {
+    width: 28rem;
+    font-size: 1em;
+  }
+}
+
+.button-style {
+  border-radius: 20px;
+  padding: 10px 25px;
+  background-color: var(--button-active-color) !important;
+}
+
+.section-title {
+  box-sizing: border-box;
+  margin-top: 1rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+

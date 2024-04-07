@@ -14,6 +14,7 @@ import { AuthService } from "../../services/auth.service";
 export class RegisterFormComponent {
   registerForm: FormGroup;
   hide = true;
+  registrationSuccess = false;
 
   constructor(private fb: FormBuilder,
               private userService: UserService,
@@ -22,6 +23,7 @@ export class RegisterFormComponent {
     this.registerForm = this.fb.group({
       username: ['', [Validators.required]],
       password: ['', [Validators.required, Validators.minLength(6)]],
+      role: ['', [Validators.required]],
     });
   }
 
@@ -30,13 +32,14 @@ export class RegisterFormComponent {
       const newUser: User = {
         username: this.registerForm.value.username,
         password: this.registerForm.value.password,
+        role: this.registerForm.value.role,
       };
 
       this.userService.createUser(newUser).subscribe(
         response => {
           console.log('User created:', response);
-          this.authService.login();
-          this.router.navigate(['/user-edit']);
+          this.registrationSuccess = true;
+
         },
         error => {
           console.error('Error creating user:', error);

@@ -1,0 +1,45 @@
+<form [formGroup]="eventForm" (ngSubmit)="onSubmit()">
+  <div class="title-description mt-2rem mb-1rem">
+    <mat-form-field appearance="outline">
+      <mat-label>Title</mat-label>
+      <input matInput type="text" formControlName="title" placeholder="Enter the event title">
+    </mat-form-field>
+  </div>
+  <div class="title-description mb-1rem">
+    <mat-form-field appearance="outline">
+      <mat-label>Description</mat-label>
+      <input matInput type="text" formControlName="description" placeholder="Enter the event description">
+    </mat-form-field>
+  </div>
+  <div class="participants mb-1rem">
+    <mat-form-field appearance="outline" color="accent">
+      <mat-label>Users</mat-label>
+      <mat-select
+        formControlName="users"
+        [multiple]="true"
+        panelClass="select-dropdown"
+      >
+        <mat-option
+          *ngFor="let profile of usersList"
+          [value]="profile.userId"
+        >{{ profile.role }}
+        </mat-option
+        >
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="mb-1rem">
+    <mat-form-field appearance="outline" color="accent">
+      <mat-label>Choose a date</mat-label>
+      <input matInput formControlName="picker" [ngxMatDatetimePicker]="picker">
+      <mat-datepicker-toggle
+        matSuffix
+        [for]="$any(picker)"
+      ></mat-datepicker-toggle>
+      <ngx-mat-datetime-picker #picker></ngx-mat-datetime-picker>
+    </mat-form-field>
+  </div>
+  <div>
+    <button mat-raised-button type="submit" class="button-style" [disabled]="!eventForm.valid">Submit</button>
+  </div>
+</form>

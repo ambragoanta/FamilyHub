@@ -37,7 +37,7 @@ button.mat-button:last-child {
 .title p {
   font-size: 2em;
   font-weight: bold;
-  color: var(--button-active-color);
+  color: var(--auth-button);
   font-family: 'Nunito', sans-serif;
   margin-bottom: 2rem;
   margin-top: 2rem;

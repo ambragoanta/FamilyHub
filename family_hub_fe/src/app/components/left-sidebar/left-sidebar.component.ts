@@ -11,11 +11,11 @@ export class LeftSidebarComponent {
   constructor(private router: Router) {
   }
 
-  activeButtonIndex: number = 0;
+  activeButtonIndex: number = -1;
 
   setActiveButton(index: number, path: string): void {
     this.activeButtonIndex = index;
-    this.router.navigate([path]);
+    this.router.navigate(['/family-hub', path]);
   }
 
 }

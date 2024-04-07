@@ -4,7 +4,9 @@
 }
 
 mat-form-field {
-  width: 100%;
+  width: 70%;
+  margin-left: 6rem;
+  margin-right: 5rem;
 }
 
 mat-form-field + mat-form-field{
@@ -13,9 +15,8 @@ mat-form-field + mat-form-field{
 
 .button-style {
   border-radius: 20px;
-  padding: 10px 25px;
+  margin-left: 6rem;
   background-color: var(--auth-button);
 }
-
 
 

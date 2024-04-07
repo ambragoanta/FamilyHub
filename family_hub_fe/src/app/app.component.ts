@@ -10,9 +10,8 @@ import { AuthService } from "./services/auth.service";
 })
 export class AppComponent {
   title = 'family_hub_fe';
-  isLoggedIn: boolean;
 
   constructor(private authService: AuthService) {
-    this.isLoggedIn = this.authService.isLoggedIn();
+
   }
 }
