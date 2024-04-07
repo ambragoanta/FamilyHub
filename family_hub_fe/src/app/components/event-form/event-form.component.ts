@@ -22,7 +22,7 @@ export class EventFormComponent implements OnInit{
     this.eventForm = this.fb.group({
       title: ['', [Validators.required, Validators.maxLength(100)]],
       description: ['', Validators.maxLength(1000)],
-      users: [[]],
+      users: [[], Validators.required],
       picker: ['', Validators.required],
     });
   }
