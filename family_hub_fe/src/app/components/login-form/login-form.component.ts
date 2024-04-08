@@ -33,7 +33,7 @@ export class LoginFormComponent {
       this.authService.login(newLogin).subscribe(response => {
         if(response){
           this.authService.storeCredentials(newLogin.username, newLogin.password);
-          this.router.navigate(['/family-hub']);
+          this.router.navigate(['/family-hub/my-events']);
         }
       });
     }
