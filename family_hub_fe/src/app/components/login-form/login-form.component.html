@@ -3,10 +3,10 @@
     <h1>Login</h1>
   </div>
   <mat-form-field appearance="outline">
-    <mat-label>Username</mat-label>
-    <input matInput formControlName="username" placeholder="Enter your username">
-    <mat-error *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched">
-      Please enter a valid username
+    <mat-label>Email</mat-label>
+    <input matInput formControlName="username" placeholder="Enter your email">
+    <mat-error *ngIf="loginForm.get('username')?.invalid">
+      Please enter a valid email
     </mat-error>
   </mat-form-field>
 

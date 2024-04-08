@@ -1,7 +1,7 @@
-<div class="profile-image-upload mr-2rem ">
-  <img class="profile-circle mt-2rem"/>
+<div (click)="navigate()" class="profile-image-upload mr-2rem ">
+  <img class="profile-circle-navbar mt-2rem"/>
   <div class="user-name">
-    <p>Emma</p>
+    <p>{{ this.currentUser?.name }}</p>
   </div>
 </div>
 
