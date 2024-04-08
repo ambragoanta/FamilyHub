@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from "../models/user.model";
 import { AuthService } from "./auth.service";
+import {EventModel} from "../models/event.model";
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,12 @@ export class UserService {
   getAll(): Observable<User[]> {
     const headers = this.authService.getAuthHeaders();
     return this.http.get<User[]>(this.usersUrl, { headers });
+  }
+
+  getOne(id: number): Observable<User> {
+    const url = `${this.usersUrl}/${id}`;
+    const headers = this.authService.getAuthHeaders();
+    return this.http.get<User>(url, { headers });
   }
 
   createUser(user: User): Observable<User> {
@@ -34,6 +41,11 @@ export class UserService {
     return this.http.get<User>(url, { headers });
   }
 
+  getMyEvents(): Observable<EventModel[]> {
+    const url = `${this.usersUrl}/my-events`;
+    const headers = this.authService.getAuthHeaders();
+    return this.http.get<EventModel[]>(url, { headers });
+  }
   uploadProfilePicture(file: File): Observable<any> {
     const formData: FormData = new FormData();
     formData.append('file', file, file.name);

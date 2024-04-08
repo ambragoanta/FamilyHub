@@ -6,5 +6,5 @@ export interface EventModel {
   description?: string;
   dueDate: string;
   dueTime: string;
-  users: User[]
+  users: number[]
 }

@@ -28,4 +28,5 @@ class EventController (private val eventService: EventService){
     @DeleteMapping("/{id}")
     fun delete(@PathVariable id: Long): ResponseEntity<Unit> =
         ResponseEntity(eventService.delete(id), HttpStatus.NO_CONTENT)
+
 }

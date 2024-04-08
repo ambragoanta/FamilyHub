@@ -33,6 +33,9 @@ import {MatIconModule} from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { FamilyHubComponent } from './components/family-hub/family-hub.component';
 import { DatePipe } from "@angular/common";
+import { EventsComponent } from './components/events/events.component';
+import { EventCardComponent } from './components/event-card/event-card.component';
+import { MyEventsComponent } from './components/my-events/my-events.component';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
 import { FamilyMemberCardComponent } from './components/family-member-card/family-member-card.component';
 import { MatSnackBarModule } from "@angular/material/snack-bar";
@@ -53,6 +56,9 @@ import { MatSnackBarModule } from "@angular/material/snack-bar";
     EventCreateComponent,
     EventEditComponent,
     FamilyHubComponent,
+    EventsComponent,
+    EventCardComponent,
+    MyEventsComponent,
     UserEditComponent,
     FamilyMemberCardComponent,
   ],

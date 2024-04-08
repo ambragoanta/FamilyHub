@@ -1,0 +1,29 @@
+.event-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--navbar-sidebar-color); /* Dark background */
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 10px; /* Space between cards */
+  color: var(--input-color);
+  font-family: 'Arial', sans-serif;
+}
+
+.event-left{
+  display: flex;
+  flex-direction: column;
+}
+
+.event-title {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}
+
+.participants{
+  display: flex;
+  flex-direction: row;
+}

@@ -1,0 +1,15 @@
+<div class="event-card">
+  <div class="event-left">
+    <div class="event-title">
+      <h1> {{ event?.title }}</h1>
+      <p> {{ event?.dueTime }}</p>
+    </div>
+    <div class="participants">
+      <ng-container *ngFor="let user of users; let last = last">
+        <p>{{ user.role }}</p>
+        <span *ngIf="!last">,&nbsp;</span>
+      </ng-container>
+    </div>
+  </div>
+  <div class="event-participants">{{ event?.users?.length }} Participants</div>
+</div>

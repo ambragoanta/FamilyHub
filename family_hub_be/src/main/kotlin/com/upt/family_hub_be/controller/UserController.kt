@@ -1,5 +1,6 @@
 package com.upt.family_hub_be.controller
 
+import com.upt.family_hub_be.dto.EventDTO
 import com.upt.family_hub_be.dto.LoginDTO
 import com.upt.family_hub_be.dto.UserProfileDTO
 import com.upt.family_hub_be.entity.UserProfile
@@ -25,6 +26,9 @@ class UserController(
 
     @GetMapping
     fun getAll(): List<UserProfileDTO> = userService.getAll()
+
+    @GetMapping("/{id}")
+    fun getOne(@PathVariable id: Long): UserProfileDTO = userService.findDTOById(id)
 
     @PostMapping("/auth")
     fun create(@RequestBody userProfileDto: UserProfileDTO): ResponseEntity<UserProfile> =
@@ -107,4 +111,8 @@ class UserController(
             ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(false)
         }
     }
+
+    @GetMapping("/my-events")
+    fun getMyEvents(authentication: Authentication): ResponseEntity<List<EventDTO>> =
+        ResponseEntity(userService.getMyEvents(authentication), HttpStatus.OK)
 }
