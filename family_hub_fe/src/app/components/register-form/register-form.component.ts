@@ -21,7 +21,8 @@ export class RegisterFormComponent {
               private router: Router,
               private authService: AuthService) {
     this.registerForm = this.fb.group({
-      username: ['', [Validators.required]],
+      username: ['', [Validators.required, Validators.email]],
+      name: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(6)]],
       role: ['', [Validators.required]],
     });
@@ -32,6 +33,7 @@ export class RegisterFormComponent {
       const newUser: User = {
         username: this.registerForm.value.username,
         password: this.registerForm.value.password,
+        name: this.registerForm.value.name,
         role: this.registerForm.value.role,
       };
 

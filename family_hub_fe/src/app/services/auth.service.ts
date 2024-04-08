@@ -14,7 +14,7 @@ export class AuthService {
 
   private usersUrl = 'http://localhost:8080/users';
 
-  storeCredentials(username: string, password: string): void {
+  storeCredentials(username: string, password?: string): void {
     localStorage.setItem('basicAuth', btoa(username + ':' + password));
   }
 

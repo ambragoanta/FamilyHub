@@ -36,6 +36,9 @@ import { DatePipe } from "@angular/common";
 import { EventsComponent } from './components/events/events.component';
 import { EventCardComponent } from './components/event-card/event-card.component';
 import { MyEventsComponent } from './components/my-events/my-events.component';
+import { UserEditComponent } from './components/user-edit/user-edit.component';
+import { FamilyMemberCardComponent } from './components/family-member-card/family-member-card.component';
+import { MatSnackBarModule } from "@angular/material/snack-bar";
 
 @NgModule({
   declarations: [
@@ -56,6 +59,8 @@ import { MyEventsComponent } from './components/my-events/my-events.component';
     EventsComponent,
     EventCardComponent,
     MyEventsComponent,
+    UserEditComponent,
+    FamilyMemberCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -74,6 +79,7 @@ import { MyEventsComponent } from './components/my-events/my-events.component';
     NgxMatNativeDateModule,
     MatIconModule,
     MatSelectModule,
+    MatSnackBarModule,
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]
