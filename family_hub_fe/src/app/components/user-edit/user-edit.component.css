@@ -1,0 +1,33 @@
+.profile-image-upload {
+  margin-bottom: 50px;
+  text-align: left;
+}
+
+.profile-circle {
+  width: 175px;
+  height: 175px;
+  background-color: var(--auth-button);
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  background-size: cover;
+  background-position: center center;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.forms {
+  & mat-form-field {
+    width: 28rem;
+    font-size: 1em;
+  }
+}
+
+.button-style {
+  border-radius: 20px;
+  padding: 10px 25px;
+  background-color: var(--button-active-color) !important;
+}
+

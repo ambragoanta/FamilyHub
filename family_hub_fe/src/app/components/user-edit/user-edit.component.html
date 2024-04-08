@@ -1,0 +1,34 @@
+<app-mainframe [title]="title">
+  <form class="app-form" [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <div class="profile-image-upload">
+      <input
+        type="file"
+        id="profileImage"
+        (change)="onFileSelect($event)"
+        hidden
+        accept="image/*"
+      />
+      <label for="profileImage">
+        <div class="profile-circle"></div>
+      </label>
+    </div>
+
+    <div class="forms">
+      <div class="mt-2rem">
+        <mat-form-field appearance="outline">
+          <mat-label>Username</mat-label>
+          <input matInput type="text" formControlName="name" placeholder="Enter your username">
+        </mat-form-field>
+      </div>
+      <div class="mt-1rem">
+        <mat-form-field appearance="outline">
+          <mat-label>Family Role</mat-label>
+          <input matInput type="text" formControlName="role" placeholder="Enter your family role">
+        </mat-form-field>
+      </div>
+    </div>
+    <div>
+      <button mat-raised-button type="submit" class="button-style mt-1rem">Submit</button>
+    </div>
+  </form>
+</app-mainframe>

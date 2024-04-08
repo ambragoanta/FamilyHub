@@ -26,6 +26,15 @@ class UserService(
         return userRepository.save(userMapper.fromDto(userProfileDto))
     }
 
+    fun updateUser(userProfileDto: UserProfileDTO): UserProfile {
+        val user = userRepository.findById(userProfileDto.userId).orElseThrow {
+            NoSuchElementException("User not found")
+        }
+
+        user.update(userProfileDto)
+        return userRepository.save(user)
+    }
+
     fun findByUsername(username: String): UserProfile? = userRepository.findUserByUsername(username)
 
 }

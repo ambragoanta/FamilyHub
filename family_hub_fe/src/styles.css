@@ -57,8 +57,20 @@ body {
   margin-right: 2rem;
 }
 
+.mt-1rem {
+  margin-top: 1rem;
+}
+
+.mt-1p5rem{
+  margin-top: 1.5rem;
+}
+
 .mt-2rem {
   margin-top: 2rem;
+}
+
+.mt-4rem {
+  margin-top: 4rem;
 }
 
 .mb-1rem{
@@ -97,33 +109,27 @@ body {
   color: var(--input-text-color) !important;
 }
 
-/* Change the text color of the datepicker input when not disabled */
 .mat-input-element:not(.mat-input-element--disabled) {
   color: var(--input-color) !important;
 }
 
-/* Change the placeholder text color of the datepicker input */
 .mat-input-element:not(.mat-input-element--disabled)::placeholder {
   color: var(--input-text-color) !important;
 }
 
-/* If you need to change the color of the calendar popup, you would need additional styles */
 .mat-calendar {
   background-color: var(--navbar-sidebar-color) !important;
   color: var(--input-color) !important;
 }
 
-/* Style for the selected date */
 .mat-calendar-body-selected {
   background-color: var(--button-active-color) !important;
 }
 
-/* Style for the current date */
 .mat-calendar-body-today:not(.mat-calendar-body-selected) {
   border-color: var(--button-active-color) !important;
 }
 
-/* Change the text color for dates in the calendar */
 .mat-calendar-body-cell-content {
   color: var(--input-text-color) !important;
 }
@@ -142,9 +148,9 @@ time-container{
 }
 
 .time-container {
-  background-color: var(--navbar-sidebar-color) !important; /* Your existing rule for the background */
+  background-color: var(--navbar-sidebar-color) !important;
 }
-/* Change the text color of the input to white */
+
 .mat-mdc-input-element {
   color: var(--input-text-color) !important;
 }
@@ -180,26 +186,22 @@ time-container{
   color: var(--input-text-color) !important;
 }
 
-/* Change the color of the primary text in list items within the dropdown */
 .mat-mdc-select-panel .mdc-list-item__primary-text,
 .mat-mdc-select-panel .mat-option-text {
   color: var(--input-text-color) !important;
 }
 
-/* Change the color of the checkbox for multiple selection, if applicable */
 .mat-mdc-select-panel .mat-pseudo-checkbox,
 .mat-mdc-select-panel .mat-mdc-option-pseudo-checkbox .mat-pseudo-checkbox-full {
   color: var(--input-text-color) !important;
 }
 
-/* Change the text color of the selected value */
 .mat-select-value {
   color: var(--input-text-color) !important;
 }
 
-/* Change the dropdown arrow color */
 .mat-select-arrow, .mat-select-arrow-wrapper::after {
-  color: var(--input-text-color) !important; /* Or use 'border-color' for SVG arrows */
+  color: var(--input-text-color) !important;
 }
 
 

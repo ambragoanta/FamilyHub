@@ -1,6 +1,7 @@
 package com.upt.family_hub_be.entity
 
 import com.fasterxml.jackson.annotation.JsonBackReference
+import com.upt.family_hub_be.dto.UserProfileDTO
 import jakarta.persistence.*
 
 @Entity
@@ -9,6 +10,8 @@ data class UserProfile(
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val userId: Long = 0,
     var username: String = "",
+    var name: String = "",
+    var profilePicture: ByteArray? = null,
     var password: String = "",
     var role: String? = "",
 
@@ -17,6 +20,11 @@ data class UserProfile(
     var events: MutableSet<Event>? = mutableSetOf()
 
 ) {
+    fun update(dtoUser: UserProfileDTO) {
+        name = dtoUser.name
+        role = dtoUser.role
+    }
+
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
         if (javaClass != other?.javaClass) return false

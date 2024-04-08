@@ -6,10 +6,10 @@
   margin-bottom: 1rem;
 }
 
-.profile-circle {
+.profile-circle-navbar {
   width: 3.5rem;
   height: 3.5rem;
-  background-color: var(--background-color);
+  background-color: var(--auth-button);
   border-radius: 50%;
   background-size: cover;
   background-position: center center;
@@ -19,5 +19,7 @@
 }
 
 .user-name {
+  margin-top: 1rem;
   color: var(--main-text-color);
+  cursor: pointer;
 }
