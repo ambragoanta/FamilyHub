@@ -1,0 +1,5 @@
+<app-mainframe [title]=title>
+  <div class="events-container">
+    <app-event-card *ngFor="let event of events" [event]="event"></app-event-card>
+  </div>
+</app-mainframe>

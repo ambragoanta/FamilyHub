@@ -12,7 +12,18 @@ class EventService(
     private val userService: UserService,
     private val userRepository: UserRepository
 ) {
-    fun getAll(): List<EventDTO> = eventRepository.findAll().map { EventDTO(it) }
+//    fun getAll(): List<EventDTO> = eventRepository.findAll().map { EventDTO(it) }
+
+    fun getAll(): List<EventDTO> {
+        // Retrieve all events from the repository
+        val allEvents = eventRepository.findAll()
+
+        // Sort the events by due date
+        val sortedEvents = allEvents.sortedBy { it.dueDate }
+
+        // Map each sorted event to EventDTO
+        return sortedEvents.map { EventDTO(it) }
+    }
 
     fun getOne(id: Long): EventDTO =
         eventRepository.findById(id)

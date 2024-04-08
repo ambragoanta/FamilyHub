@@ -33,6 +33,9 @@ import {MatIconModule} from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { FamilyHubComponent } from './components/family-hub/family-hub.component';
 import { DatePipe } from "@angular/common";
+import { EventsComponent } from './components/events/events.component';
+import { EventCardComponent } from './components/event-card/event-card.component';
+import { MyEventsComponent } from './components/my-events/my-events.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +53,9 @@ import { DatePipe } from "@angular/common";
     EventCreateComponent,
     EventEditComponent,
     FamilyHubComponent,
+    EventsComponent,
+    EventCardComponent,
+    MyEventsComponent,
   ],
   imports: [
     BrowserModule,
