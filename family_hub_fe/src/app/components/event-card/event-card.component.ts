@@ -1,7 +1,8 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {EventModel} from "../../models/event.model";
-import {User} from "../../models/user.model";
-import {UserService} from "../../services/user.service";
+import { Component, Input, OnInit } from '@angular/core';
+import { EventModel } from "../../models/event.model";
+import { UserService } from "../../services/user.service";
+import { forkJoin, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-event-card',
@@ -9,18 +10,29 @@ import {UserService} from "../../services/user.service";
   styleUrls: ['./event-card.component.css']
 })
 export class EventCardComponent implements OnInit {
-  users: User[] = [];
-  @Input() event: EventModel | undefined;
+  @Input() event: EventModel | null = null;
+  @Input() status: string = '';
+  roles: string[] = [];
 
-  constructor(private userService: UserService) {
-  }
+  constructor(private userService: UserService) { }
 
-  ngOnInit(): void {
-    this.event?.users.forEach((userId) => {
-      this.userService.getOne(userId).subscribe((user) => {
-        this.users.push(user);
+  ngOnInit() {
+    if (this.event?.users) {
+
+      const userObservables: Observable<string>[] = this.event.users.map(user => this.getRole(user));
+
+      forkJoin(userObservables).subscribe(roles => {
+        this.roles = roles;
+        console.log(this.roles);
       });
-    });
+    }
   }
 
+  getRole(userId: number): Observable<string> {
+    return this.userService.getOne(userId).pipe(
+      map(user => {
+        return user && user.role ? user.role : 'No role assigned';
+      })
+    );
+  }
 }

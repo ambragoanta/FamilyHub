@@ -19,6 +19,11 @@ body {
   --button-active-color: #1BA098;
   --auth-button: #1BA098;
   --input-text-color: #1A1A1A;
+  --finished-card: rgba(102, 136, 255, 0.4);
+  --live-card:  rgba(245, 93, 93, 0.4);
+  --upcoming-card: rgba(238, 146, 57, 0.4);
+  --color1: #FFFFFF;
+  --color2: #F8F8F8;
 
   --navbar-height: 7rem;
 
@@ -33,6 +38,8 @@ body {
   --button-active-color: #3ED6B9;
   --input-color:  #ffffff;
   --input-text-color: #f0f0f0;
+  --color1:  #1A1A1A;
+  --color2: #151515
 }
 
 .app-content {
@@ -45,7 +52,8 @@ body {
 
 .app {
   display: flex;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   max-height: calc(100vh - var(--navbar-height));
 }
 
@@ -208,9 +216,3 @@ time-container{
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-.events-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  width:100%;
-}

@@ -39,6 +39,7 @@ import { MyEventsComponent } from './components/my-events/my-events.component';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
 import { FamilyMemberCardComponent } from './components/family-member-card/family-member-card.component';
 import { MatSnackBarModule } from "@angular/material/snack-bar";
+import { DateCardComponent } from './components/date-card/date-card.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,8 @@ import { MatSnackBarModule } from "@angular/material/snack-bar";
     MyEventsComponent,
     UserEditComponent,
     FamilyMemberCardComponent,
+    DateCardComponent,
+    DateCardComponent,
   ],
   imports: [
     BrowserModule,
