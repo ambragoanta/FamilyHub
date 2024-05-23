@@ -39,6 +39,9 @@ import { MyEventsComponent } from './components/my-events/my-events.component';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
 import { FamilyMemberCardComponent } from './components/family-member-card/family-member-card.component';
 import { MatSnackBarModule } from "@angular/material/snack-bar";
+import { DateCardComponent } from './components/date-card/date-card.component';
+import { MatDialogModule } from "@angular/material/dialog";
+import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +64,9 @@ import { MatSnackBarModule } from "@angular/material/snack-bar";
     MyEventsComponent,
     UserEditComponent,
     FamilyMemberCardComponent,
+    DateCardComponent,
+    DateCardComponent,
+    ConfirmationDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -80,6 +86,7 @@ import { MatSnackBarModule } from "@angular/material/snack-bar";
     MatIconModule,
     MatSelectModule,
     MatSnackBarModule,
+    MatDialogModule,
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]

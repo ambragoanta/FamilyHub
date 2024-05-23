@@ -1,29 +1,84 @@
 .event-card {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  background: var(--navbar-sidebar-color); /* Dark background */
+  background: linear-gradient(to right, var(--color1), var(--color2));
   border-radius: 10px;
-  padding: 16px;
-  margin-bottom: 10px; /* Space between cards */
-  color: var(--input-color);
-  font-family: 'Arial', sans-serif;
+  padding: 15px 20px;
+  color: var(--main-text-color);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+  white-space: normal;
+  min-width: 300px;
+  max-width: 100%;
+  font-size: 16px;
+  margin-left: 15px;
+  display: block;
+  border: 2px solid var(--upcoming-card);
 }
 
-.event-left{
+.participants-names {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--main-text-color);
+  margin-bottom: 10px;
+}
+
+.event-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .event-title {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  align-items: center;
+  font-weight: bold;
+  flex: 1;
 }
 
-.participants{
-  display: flex;
-  flex-direction: row;
+.event-participants > span:first-child {
+  margin-right: 5px;
 }
+
+
+.event-time {
+  font-weight: normal;
+  font-size: 16px;
+}
+
+.event-participants {
+  color: var(--main-text-color);
+  border-radius: 15px;
+  padding: 4px 12px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.theme {
+  cursor: pointer;
+}
+
+.live {
+  border: 2px solid var(--live-card);
+}
+
+.upcoming {
+  border: 2px solid var(--upcoming-card);
+}
+
+.finished {
+  border: 2px solid var(--finished-card);
+}
+
+.live-participants {
+  background-color: var(--live-card);
+}
+
+.upcoming-participants {
+  background-color: var(--upcoming-card);
+}
+
+.finished-participants {
+  background-color: var(--finished-card);
+}
+
+

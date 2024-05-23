@@ -1,36 +1,89 @@
-.event-card {
+.page-container {
   display: flex;
   flex-direction: column;
-  background: #202020;
-  border-radius: 10px;
-  padding: 16px;
-  margin-bottom: 10px;
-  color: #FFFFFF;
+  width: 100%;
+  height: 100%;
 }
 
-
-.event-time {
+.content-container {
   display: flex;
-  justify-content: space-between;
+  width: 100%;
+}
+
+.week-card-container {
+  display: flex;
   align-items: center;
-  margin-bottom: 12px;
+  padding: 10px 0;
+  min-width: max-content;
+  margin-left: 10px;
 }
 
-.event-hour {
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.event-participants {
-  font-size: 14px;
-  background: #333333;
+.date-card {
+  width: 100px;
+  min-height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 15px;
-  padding: 4px 12px;
+  color: var(--main-text-color);
+  font-size: 18px;
+  margin-right: 10px;
+  background-color: var(--navbar-sidebar-color);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.event-title {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 8px;
+.label-container {
+  display: flex;
+  flex-grow: 1;
+  white-space: nowrap;
 }
+
+.status-label {
+  padding: 8px 16px;
+  border-radius: 20px;
+  color: var(--main-text-color);
+  font-size: 16px;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.status-label.upcoming { background-color: var(--upcoming-card); cursor: pointer}
+.status-label.live { background-color: var(--live-card); cursor: pointer}
+.status-label.finished { background-color: var(--finished-card); cursor: pointer}
+.status-label.all { background-color: var(--all-card); cursor: pointer}
+
+.date-sidebar {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  max-height: 90vh;
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
+.date-event-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.events-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+::ng-deep ::-webkit-scrollbar {
+  width: 12px;
+}
+::ng-deep ::-webkit-scrollbar-track {
+  background: var(--navbar-sidebar-color);
+}
+::ng-deep ::-webkit-scrollbar-thumb {
+  background-color: var(--navbar-sidebar-color);
+  border-radius: 10px;
+  border: 3px solid var(--button-active-color);
+}
+
+
 

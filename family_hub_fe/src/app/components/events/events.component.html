@@ -1,5 +1,28 @@
-<app-mainframe [title]=title>
-  <div class="events-container">
-    <app-event-card *ngFor="let event of events" [event]="event"></app-event-card>
+<app-mainframe [title]="title">
+  <div class="page-container" >
+    <div class="content-container">
+      <div class="week-card-container">
+        <div class="date-card week-card"><p>Week</p></div>
+        <div class="label-container">
+          <div class="status-label finished" (click)="filterEvents('finished')">Finished</div>
+          <div class="status-label live" (click)="filterEvents('current')">Live</div>
+          <div class="status-label upcoming" (click)="filterEvents('upcoming')">Upcoming</div>
+          <div class="status-label all" (click)="filterEvents('all')">All</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="date-sidebar">
+      <div *ngFor="let dateInfo of dateList" class="date-event-container">
+        <app-date-card [date]="dateInfo.date" [status]="dateInfo.status"></app-date-card>
+        <div class="events-list">
+          <app-event-card *ngFor="let event of dateInfo.events"
+                          [event]="event"
+                          [status]="dateInfo.status"
+                          (eventDeleted)="onEventDeleted()">
+          </app-event-card>
+        </div>
+      </div>
+    </div>
   </div>
 </app-mainframe>

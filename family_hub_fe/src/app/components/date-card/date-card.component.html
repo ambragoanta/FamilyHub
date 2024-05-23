@@ -1,0 +1,3 @@
+<div class="date-card" [ngClass]="{'finished': status === 'finished', 'current': status === 'current', 'upcoming': status === 'upcoming', 'default': status === 'default'}">
+  <div class="date-header">{{ date | date: 'dd.MM' }}</div>
+</div>
