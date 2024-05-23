@@ -14,6 +14,9 @@
 }
 
 .participants-names {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
   font-size: 14px;
   color: var(--main-text-color);
   margin-bottom: 10px;
@@ -30,6 +33,11 @@
   flex: 1;
 }
 
+.event-participants > span:first-child {
+  margin-right: 5px;
+}
+
+
 .event-time {
   font-weight: normal;
   font-size: 16px;
@@ -43,6 +51,10 @@
   display: flex;
   align-items: center;
   margin-left: 10px;
+}
+
+.theme {
+  cursor: pointer;
 }
 
 .live {

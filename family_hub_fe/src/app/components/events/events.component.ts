@@ -12,10 +12,14 @@ export class EventsComponent implements OnInit {
   events: EventModel[] = [];
   dateList: { date: string, status: 'finished' | 'current' | 'upcoming' , events: EventModel[]}[] = [];
   currentDate: Date = new Date();
-
+  selectedStatus: 'finished' | 'current' | 'upcoming' | 'all' = 'all';
   constructor(private eventService: EventService) { }
 
   ngOnInit(): void {
+    this.getEvents();
+  }
+
+  getEvents(){
     this.eventService.getAllEvents().subscribe((events: EventModel[]) => {
       this.events = events;
       this.prepareWeekDates();
@@ -32,17 +36,16 @@ export class EventsComponent implements OnInit {
       const dateObj = new Date(startOfWeek);
       dateObj.setDate(startOfWeek.getDate() + i);
       const dateString = this.formatDate(dateObj);
-      const dayEvents = this.events.filter(event => event.dueDate === dateString);
+      let dayEvents = this.events.filter(event => event.dueDate === dateString);
+      dayEvents = dayEvents.sort((a, b) => a.dueTime.localeCompare(b.dueTime));
+      const status = this.determineDateStatus(dateObj);
       return {
         date: dateString,
-        status: this.determineDateStatus(dateObj),
-        events: dayEvents
+        status: status,
+        events: this.selectedStatus === 'all' || this.selectedStatus === status ? dayEvents : []
       };
     });
-
-    console.log(this.dateList);
   }
-
 
   formatDate(date: Date): string {
     return date.toISOString().slice(0, 10);
@@ -60,4 +63,14 @@ export class EventsComponent implements OnInit {
       return 'current';
     }
   }
+
+  onEventDeleted(){
+    this.getEvents();
+  }
+
+  filterEvents(status: 'finished' | 'current' | 'upcoming' | 'all'): void {
+    this.selectedStatus = status;
+    this.prepareWeekDates();
+  }
+
 }

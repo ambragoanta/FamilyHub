@@ -3,12 +3,52 @@
     <span class="event-title">{{ event?.title }}</span>
     <span class="event-time">{{ event?.dueTime }}</span>
     <div class="event-participants" [ngClass]="{'live-participants': status === 'current', 'upcoming-participants': status === 'upcoming', 'finished-participants': status === 'finished'}">
-      <span>{{ event?.users?.length }}</span>
+      <span>{{ event?.users?.length }}</span>&nbsp;
       <span *ngIf="event?.users?.length === 1">Participant</span>
       <span *ngIf="event?.users?.length !== 1">Participants</span>
     </div>
+    <div class="ml-1 card-img">
+      <img
+        *ngIf="!themeService.isDarkMode"
+        (click)="onDeleteCard()"
+        src="assets/icons/delete-dark.svg"
+        alt="Delete"
+        height="20"
+        width="20"
+        class="theme"
+      />
+      <img
+        *ngIf="themeService.isDarkMode"
+        (click)="onDeleteCard()"
+        src="assets/icons/delete-light.svg"
+        alt="Delete"
+        height="20"
+        width="20"
+        class="theme"
+      />
+    </div>
+    <div class="ml-0">
+      <img
+        *ngIf="!themeService.isDarkMode"
+        (click)="onEditCard()"
+        src="assets/icons/edit-dark.svg"
+        alt="Delete"
+        height="20"
+        width="20"
+        class="theme"
+      />
+      <img
+        *ngIf="themeService.isDarkMode"
+        (click)="onEditCard()"
+        src="assets/icons/edit-light.svg"
+        alt="Delete"
+        height="20"
+        width="20"
+        class="theme"
+      />
+    </div>
   </div>
-  <div class="participants-names" *ngFor="let role of roles">
-    {{ role }}
+  <div class="participants-names">
+    <span *ngFor="let role of roles">{{ role }}</span>
   </div>
 </div>

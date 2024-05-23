@@ -40,6 +40,8 @@ import { UserEditComponent } from './components/user-edit/user-edit.component';
 import { FamilyMemberCardComponent } from './components/family-member-card/family-member-card.component';
 import { MatSnackBarModule } from "@angular/material/snack-bar";
 import { DateCardComponent } from './components/date-card/date-card.component';
+import { MatDialogModule } from "@angular/material/dialog";
+import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +66,7 @@ import { DateCardComponent } from './components/date-card/date-card.component';
     FamilyMemberCardComponent,
     DateCardComponent,
     DateCardComponent,
+    ConfirmationDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -83,6 +86,7 @@ import { DateCardComponent } from './components/date-card/date-card.component';
     MatIconModule,
     MatSelectModule,
     MatSnackBarModule,
+    MatDialogModule,
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]

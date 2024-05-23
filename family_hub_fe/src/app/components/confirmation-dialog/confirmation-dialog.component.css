@@ -1,0 +1,16 @@
+.dialog-content {
+  background-color: var(--background-color);
+}
+
+h2[mat-dialog-title] {
+  color: var(--main-text-color) !important;
+}
+
+mat-dialog-content {
+  color: var(--main-text-color) !important;
+}
+
+button[mat-button] {
+  color: var(--main-text-color) !important;
+  background-color: var(--navbar-sidebar-color) !important;
+}

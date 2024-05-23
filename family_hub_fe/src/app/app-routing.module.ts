@@ -17,6 +17,7 @@ const routes: Routes = [
     children: [
       {path: 'family-members', component: FamilyMembersComponent},
       {path: 'add-event', component: EventCreateComponent},
+      {path: 'edit-event/:id', component: EventEditComponent},
       {path: 'edit-event', component: EventEditComponent},
       {path: 'edit-user-profile', component: UserEditComponent},
       {path: 'all-events', component: EventsComponent},

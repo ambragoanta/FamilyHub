@@ -47,9 +47,10 @@
   margin-right: 10px;
 }
 
-.status-label.upcoming { background-color: var(--upcoming-card); }
-.status-label.live { background-color: var(--live-card); }
-.status-label.finished { background-color: var(--finished-card); }
+.status-label.upcoming { background-color: var(--upcoming-card); cursor: pointer}
+.status-label.live { background-color: var(--live-card); cursor: pointer}
+.status-label.finished { background-color: var(--finished-card); cursor: pointer}
+.status-label.all { background-color: var(--all-card); cursor: pointer}
 
 .date-sidebar {
   display: flex;
@@ -83,5 +84,6 @@
   border-radius: 10px;
   border: 3px solid var(--button-active-color);
 }
+
 
 
