@@ -79,7 +79,7 @@ export class EventCardComponent implements OnInit {
   onDeleteCard() {
     const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
       width: '400px',
-      data: {message: 'Are you sure you want to delete this event?'}
+      data: {title: "Delete Event", message: 'Are you sure you want to delete this event?'}
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -99,7 +99,7 @@ export class EventCardComponent implements OnInit {
   onEditCard(){
     const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
       width: '400px',
-      data: {message: 'Are you sure you want to edit this event?'}
+      data: {title: "Edit Event", message: 'Are you sure you want to edit this event?'}
     });
 
     dialogRef.afterClosed().subscribe(result => {
