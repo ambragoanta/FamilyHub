@@ -1,5 +1,23 @@
 <app-mainframe [title]="title">
-  <div class="events-container">
-    <app-event-card *ngFor="let event of myEvents" [event]="event"></app-event-card>
-  </div>
+    <div *ngFor="let dateInfo of dateList">
+      <div class="mt-1rem" *ngIf="dateInfo.status !== 'finished'">
+        <div *ngFor="let event of dateInfo.events">
+          <div *ngIf="dateInfo.status === 'upcoming'">
+            <p class="status-text upcoming">{{ getRemainingDays(event) }}</p>
+            <app-event-card [event]="event"
+                            [status]="dateInfo.status"
+                            [myCard]="true">
+            </app-event-card>
+          </div>
+          <div *ngIf="dateInfo.status === 'current'">
+            <p class="status-text current">{{ getRemainingHours(event) }}</p>
+            <app-event-card [event]="event"
+                            [status]="dateInfo.status"
+                            [myCard]="true"
+                            (myEventDeleted)="onEventDeleted()">
+            </app-event-card>
+          </div>
+        </div>
+      </div>
+    </div>
 </app-mainframe>

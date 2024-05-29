@@ -19,6 +19,7 @@
           <app-event-card *ngFor="let event of dateInfo.events"
                           [event]="event"
                           [status]="dateInfo.status"
+                          [myCard]="false"
                           (eventDeleted)="onEventDeleted()">
           </app-event-card>
         </div>
