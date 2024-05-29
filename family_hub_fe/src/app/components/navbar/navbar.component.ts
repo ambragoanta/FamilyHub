@@ -22,7 +22,8 @@ export class NavbarComponent {
   onLogout(){
     const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
       width: '400px',
-      data: {message: 'Are you sure you want to logout?'}
+      data: {title: 'Logout', message: 'Are you sure you want to logout?'},
+
     });
 
     dialogRef.afterClosed().subscribe(result => {
