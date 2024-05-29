@@ -7,6 +7,7 @@ import { EventService } from "../../services/event.service";
 import { EventModel } from "../../models/event.model";
 import { UserService } from "../../services/user.service";
 import { MatSnackBar } from '@angular/material/snack-bar';
+import {switchMap} from "rxjs/operators";
 
 @Component({
   selector: 'app-event-form',
@@ -16,6 +17,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class EventFormComponent implements OnInit {
   eventForm: FormGroup;
   usersList: User[] = [];
+  familyName: string | undefined = '';
   @Input() event: EventModel | null = null;
 
   constructor(private fb: FormBuilder, private router: Router,
@@ -45,13 +47,17 @@ export class EventFormComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.userService.getAll().subscribe({
-      next: (users) => {
-        this.usersList = users;
-        console.log('Users fetched successfully', this.usersList);
+    this.userService.getMe().pipe(
+      switchMap((user: User) => {
+        this.familyName = user.familyName;
+        return this.userService.getAll();
+      })
+    ).subscribe({
+      next: (users: User[]) => {
+        this.usersList = users.filter((user) => user.familyName === this.familyName);
       },
-      error: (error) => {
-        console.error('Error fetching users', error);
+      error: (err) => {
+        console.error('Error fetching family members:', err);
       }
     });
 

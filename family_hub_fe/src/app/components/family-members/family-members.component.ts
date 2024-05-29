@@ -10,6 +10,7 @@ import { UserService } from "../../services/user.service";
 export class FamilyMembersComponent implements OnInit{
   title = "Family Members";
   familyMembers: User[] = [];
+  familyName: string | undefined = '';
 
   constructor(private userService: UserService) {}
 
@@ -18,7 +19,7 @@ export class FamilyMembersComponent implements OnInit{
   }
 
   fetchFamilyMembers() {
-    this.userService.getAll().subscribe({
+    this.userService.getFamilyMembers().subscribe({
       next: (users: User[]) => {
         this.familyMembers = users;
       },

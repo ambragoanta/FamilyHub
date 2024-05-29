@@ -25,6 +25,7 @@ export class RegisterFormComponent {
       name: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(6)]],
       role: ['', [Validators.required]],
+      familyName: ['', [Validators.required]],
     });
   }
 
@@ -35,6 +36,7 @@ export class RegisterFormComponent {
         password: this.registerForm.value.password,
         name: this.registerForm.value.name,
         role: this.registerForm.value.role,
+        familyName: this.registerForm.value.familyName,
       };
 
       this.userService.createUser(newUser).subscribe(

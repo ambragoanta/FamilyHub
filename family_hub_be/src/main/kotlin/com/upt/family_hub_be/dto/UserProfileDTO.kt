@@ -8,5 +8,6 @@ data class UserProfileDTO (
     var password: String,
     var profilePicture: ByteArray?,
     var role: String?,
-    var events: MutableSet<Long>? = mutableSetOf()
+    var events: MutableSet<Long>? = mutableSetOf(),
+    var familyName: String?
 )

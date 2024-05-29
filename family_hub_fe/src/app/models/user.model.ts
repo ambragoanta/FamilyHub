@@ -5,5 +5,6 @@ export interface User {
   password?: string;
   role?: string | null;
   events?: Set<number>;
+  familyName?: string;
 }
 

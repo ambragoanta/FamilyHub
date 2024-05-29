@@ -27,6 +27,10 @@ class UserController(
     @GetMapping
     fun getAll(): List<UserProfileDTO> = userService.getAll()
 
+    @GetMapping("/family-members")
+    fun getFamilyMembers(authentication: Authentication): ResponseEntity<List<UserProfileDTO>> =
+        ResponseEntity(userService.getFamilyMembers(authentication), HttpStatus.OK)
+
     @GetMapping("/{id}")
     fun getOne(@PathVariable id: Long): UserProfileDTO = userService.findDTOById(id)
 
