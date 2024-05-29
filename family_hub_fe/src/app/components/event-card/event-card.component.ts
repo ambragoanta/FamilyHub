@@ -17,14 +17,18 @@ import { Router } from "@angular/router";
 export class EventCardComponent implements OnInit {
   @Input() event: EventModel | null = null;
   @Input() status: string = '';
-  roles: string[] = [];
+  @Input() myCard: boolean = false;
   @Output() eventDeleted: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Output() myEventDeleted: EventEmitter<boolean> = new EventEmitter<boolean>();
+  roles: string[] = [];
+  showEditDeleteButtons: boolean = false;
 
   constructor(private userService: UserService,
               protected themeService: ThemeService,
               private dialog: MatDialog,
               private eventService: EventService,
-              private router: Router) { }
+              private router: Router) {
+  }
 
   ngOnInit() {
     if (this.event) {
@@ -62,7 +66,12 @@ export class EventCardComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if (result && this.event?.eventId !== undefined) {
         this.eventService.deleteEvent(this.event.eventId).subscribe(result => {
-           this.eventDeleted.emit();
+          if(this.myCard){
+            this.myEventDeleted.emit()
+          }
+          else{
+            this.eventDeleted.emit();
+          }
         });
       }
     });
@@ -84,4 +93,6 @@ export class EventCardComponent implements OnInit {
       }
     });
   }
+
+
 }

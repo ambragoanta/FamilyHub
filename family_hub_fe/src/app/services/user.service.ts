@@ -71,4 +71,11 @@ export class UserService {
     return this.http.get(url, { headers, responseType: 'blob' });
   }
 
+  getRoleForEvent(userId: number, eventId: number): Observable<string> {
+    const url = `${this.usersUrl}/role/${userId}/events/${eventId}`;
+    const headers = this.authService.getAuthHeaders();
+    return this.http.get<string>(url, { headers });
+  }
+
+
 }
