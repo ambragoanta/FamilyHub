@@ -11,11 +11,9 @@
       <app-register-form *ngIf="!showLogin"></app-register-form>
     </mat-card-content>
     <br>
-    <mat-card-content>
+    <mat-card-actions>
       <button mat-button (click)="showLogin = true" [disabled]="showLogin">Login</button>
       <button mat-button (click)="showLogin = false" [disabled]="!showLogin">Register</button>
-    </mat-card-content>
+    </mat-card-actions>
   </mat-card>
 </div>
-
-

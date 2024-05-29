@@ -3,6 +3,8 @@ import { NavigationEnd, Router } from "@angular/router";
 import { UserService } from "../../services/user.service";
 import { User } from "../../models/user.model";
 import { filter, takeUntil } from "rxjs";
+import { ConfirmationDialogComponent } from "../confirmation-dialog/confirmation-dialog.component";
+import { MatDialog } from "@angular/material/dialog";
 
 @Component({
   selector: 'app-profile-picture',
@@ -13,7 +15,8 @@ export class ProfilePictureComponent implements OnInit{
   currentUser?: User;
 
   constructor(private router: Router,
-              private userService: UserService) {
+              private userService: UserService,
+              private dialog: MatDialog) {
   }
 
   ngOnInit() {
@@ -56,6 +59,15 @@ export class ProfilePictureComponent implements OnInit{
   }
 
   navigate(){
-    this.router.navigate(['/family-hub/edit-user-profile']);
+    const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+      width: '400px',
+      data: {message: 'Do you want to edit your profile?'}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if(result){
+        this.router.navigate(['/family-hub/edit-user-profile']);
+      }
+    });
   }
 }

@@ -29,5 +29,13 @@ input[type="file"] {
   border-radius: 20px;
   padding: 10px 25px;
   background-color: var(--button-active-color) !important;
+  color: var(--main-text-color) !important;
 }
 
+.button-style-cancel{
+  border-radius: 20px;
+  padding: 10px 25px;
+  border: 2px solid var(--button-active-color);
+  background-color: var(--navbar-sidebar-color) !important;
+  color: var(--main-text-color) !important;
+}

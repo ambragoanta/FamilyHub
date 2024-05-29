@@ -26,6 +26,7 @@ export class EventEditComponent implements OnInit{
   loadEventData(eventId: string): void {
     this.eventService.getEvent(+eventId).subscribe(event => {
       this.event = event;
+      console.log(event);
     });
   }
 }

@@ -9,7 +9,5 @@ import { ThemeService } from "../../services/theme.service";
 export class AuthComponent {
   showLogin: boolean = true;
 
-  constructor(protected themeService: ThemeService) {
-  }
 
 }

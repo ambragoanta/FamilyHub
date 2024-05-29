@@ -9,7 +9,7 @@
     </div>
     <div class="ml-1 card-img">
       <img
-        *ngIf="!themeService.isDarkMode"
+        *ngIf="!themeService.isDarkMode && showEditDeleteButtons"
         (click)="onDeleteCard()"
         src="assets/icons/delete-dark.svg"
         alt="Delete"
@@ -18,7 +18,7 @@
         class="theme"
       />
       <img
-        *ngIf="themeService.isDarkMode"
+        *ngIf="themeService.isDarkMode && showEditDeleteButtons"
         (click)="onDeleteCard()"
         src="assets/icons/delete-light.svg"
         alt="Delete"
@@ -29,7 +29,7 @@
     </div>
     <div class="ml-0">
       <img
-        *ngIf="!themeService.isDarkMode"
+        *ngIf="!themeService.isDarkMode && showEditDeleteButtons"
         (click)="onEditCard()"
         src="assets/icons/edit-dark.svg"
         alt="Delete"
@@ -38,7 +38,7 @@
         class="theme"
       />
       <img
-        *ngIf="themeService.isDarkMode"
+        *ngIf="themeService.isDarkMode && showEditDeleteButtons"
         (click)="onEditCard()"
         src="assets/icons/edit-light.svg"
         alt="Delete"

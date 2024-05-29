@@ -55,7 +55,7 @@ body {
 .app {
   display: flex;
   overflow-y: auto;
-  overflow-x: hidden;
+  overflow-x: auto;
   max-height: calc(100vh - var(--navbar-height));
 }
 
