@@ -14,6 +14,7 @@ data class UserProfile(
     var profilePicture: ByteArray? = null,
     var password: String = "",
     var role: String? = "",
+    var familyName: String? = "",
 
     @ManyToMany(fetch = FetchType.LAZY, mappedBy = "users")
     @JsonBackReference

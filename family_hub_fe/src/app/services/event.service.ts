@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { EventModel } from "../models/event.model";
 import { AuthService } from "./auth.service";
@@ -16,6 +16,11 @@ export class EventService {
   getAllEvents(): Observable<EventModel[]> {
     const headers = this.authService.getAuthHeaders();
     return this.http.get<EventModel[]>(this.baseUrl, { headers });
+  }
+
+  getFamilyEvents(): Observable<EventModel[]> {
+    const headers = this.authService.getAuthHeaders();
+    return this.http.get<EventModel[]>(`${this.baseUrl}/family-events`, { headers });
   }
 
   getEvent(id: number): Observable<EventModel> {

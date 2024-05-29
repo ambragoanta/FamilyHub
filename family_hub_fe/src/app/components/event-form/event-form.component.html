@@ -21,7 +21,7 @@
         <mat-option
           *ngFor="let profile of usersList"
           [value]="profile.userId">
-          {{ profile.role }}</mat-option>
+          {{ profile.role }} ({{ profile.name }})</mat-option>
       </mat-select>
     </mat-form-field>
   </div>

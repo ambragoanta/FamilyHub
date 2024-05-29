@@ -20,6 +20,11 @@ export class UserService {
     return this.http.get<User[]>(this.usersUrl, { headers });
   }
 
+  getFamilyMembers(): Observable<User[]> {
+    const headers = this.authService.getAuthHeaders();
+    return this.http.get<User[]>(`${this.usersUrl}/family-members`, { headers });
+  }
+
   getOne(id: number): Observable<User> {
     const url = `${this.usersUrl}/${id}`;
     const headers = this.authService.getAuthHeaders();

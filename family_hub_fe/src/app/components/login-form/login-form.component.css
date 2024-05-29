@@ -17,4 +17,14 @@ mat-form-field + mat-form-field {
   background-color: var(--auth-button);
 }
 
+mat-label, .mat-mdc-input-element {
+  color: var(--login-input-color) !important;
+}
 
+::ng-deep:host .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-text-field__input{
+  color: var(--login-input-color) !important;
+}
+
+.mat-mdc-input-element.mat-mdc-form-field-input-control::placeholder {
+  color: var(--login-input-color) !important;
+}

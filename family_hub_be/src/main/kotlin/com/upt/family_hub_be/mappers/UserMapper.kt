@@ -16,7 +16,8 @@ class UserMapper(private val passwordEncoder: PasswordEncoder) {
                 name = userProfileDto.name,
                 password = passwordEncoder.encode(userProfileDto.password),
                 role = userProfileDto.role,
-                profilePicture = userProfileDto.profilePicture
+                profilePicture = userProfileDto.profilePicture,
+                familyName = userProfileDto.familyName
         )
 
 
@@ -28,6 +29,7 @@ class UserMapper(private val passwordEncoder: PasswordEncoder) {
                 password = userProfile.password,
                 role = userProfile.role,
                 events = userProfile.events?.map { it.eventId }?.toMutableSet(),
-                profilePicture = userProfile.profilePicture
+                profilePicture = userProfile.profilePicture,
+                familyName = userProfile.familyName
         )
 }

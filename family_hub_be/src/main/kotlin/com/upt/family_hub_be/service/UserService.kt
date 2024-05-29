@@ -56,4 +56,15 @@ class UserService(
             ?: throw NoSuchElementException("User with username ${authentication.name} was not found")
         return user.events?.map { EventDTO(it) } ?: emptyList()
     }
+
+    fun getFamilyMembers(authentication: Authentication): List<UserProfileDTO> {
+        val user = userRepository.findUserByUsername(authentication.name)
+            ?: throw NoSuchElementException("User with username ${authentication.name} was not found")
+        return user.familyName?.let { familyName ->
+            userRepository.findAllByFamilyName(familyName)
+                ?.stream()
+                ?.map { userMapper.toDto(it) }
+                ?.collect(Collectors.toList()) ?: emptyList()
+        } ?: emptyList()
+    }
 }

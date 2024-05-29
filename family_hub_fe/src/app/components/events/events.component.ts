@@ -16,11 +16,11 @@ export class EventsComponent implements OnInit {
   constructor(private eventService: EventService) { }
 
   ngOnInit(): void {
-    this.getEvents();
+    this.getFamilyEvents();
   }
 
-  getEvents(){
-    this.eventService.getAllEvents().subscribe((events: EventModel[]) => {
+  getFamilyEvents(){
+    this.eventService.getFamilyEvents().subscribe((events: EventModel[]) => {
       this.events = events;
       this.prepareWeekDates();
     });
@@ -65,7 +65,7 @@ export class EventsComponent implements OnInit {
   }
 
   onEventDeleted(){
-    this.getEvents();
+    this.getFamilyEvents();
   }
 
   filterEvents(status: 'finished' | 'current' | 'upcoming' | 'all'): void {

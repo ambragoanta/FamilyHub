@@ -1,9 +1,12 @@
 package com.upt.family_hub_be.service
 
 import com.upt.family_hub_be.dto.EventDTO
+import com.upt.family_hub_be.dto.UserProfileDTO
 import com.upt.family_hub_be.entity.Event
+import com.upt.family_hub_be.mappers.UserMapper
 import com.upt.family_hub_be.repository.EventRepository
 import com.upt.family_hub_be.repository.UserRepository
+import org.springframework.security.core.Authentication
 import org.springframework.stereotype.Service
 
 @Service
@@ -69,4 +72,17 @@ class EventService(
             throw RuntimeException("User Group could not be created", e)
         }
     }
+
+    fun getFamilyEvents(authentication: Authentication): List<EventDTO> {
+        val users = userService.getFamilyMembers(authentication)
+        val familyUserIds = users.map { it.userId }.toSet()
+
+        val events = eventRepository.findAll().filter { event ->
+            val eventUserIds = event.users?.map { it.userId }?.toSet() ?: emptySet()
+            eventUserIds.all { it in familyUserIds }
+        }
+
+        return events.map { EventDTO(it) }
+    }
+
 }
