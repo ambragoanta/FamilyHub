@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { UserService } from "../../services/user.service";
 import { User } from "../../models/user.model";
 import { AuthService } from "../../services/auth.service";
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-user-edit',
@@ -17,7 +18,8 @@ export class UserEditComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
               private userService: UserService,
-              private authService: AuthService) {
+              private authService: AuthService,
+              private location: Location) {
     this.userForm = this.fb.group({
       name: ['', Validators.required],
       role: ['', Validators.required],
@@ -113,4 +115,7 @@ export class UserEditComponent implements OnInit {
     }
   }
 
+  onCancel(){
+    this.location.back();
+  }
 }

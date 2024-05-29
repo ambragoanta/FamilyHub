@@ -1,3 +1,5 @@
 <app-mainframe [title]="title">
-  <app-event-form [event]="event"></app-event-form>
+  <div *ngIf="event">
+    <app-event-form [event]="event" [editMode]="true"></app-event-form>
+  </div>
 </app-mainframe>

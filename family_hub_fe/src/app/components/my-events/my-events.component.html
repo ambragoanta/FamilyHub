@@ -6,7 +6,8 @@
             <p class="status-text upcoming">{{ getRemainingDays(event) }}</p>
             <app-event-card [event]="event"
                             [status]="dateInfo.status"
-                            [myCard]="true">
+                            [myCard]="true"
+                            (myEventDeleted)="onEventDeleted()">
             </app-event-card>
           </div>
           <div *ngIf="dateInfo.status === 'current'">

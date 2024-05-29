@@ -15,6 +15,7 @@ export class RegisterFormComponent {
   registerForm: FormGroup;
   hide = true;
   registrationSuccess = false;
+  registrationError = '';
 
   constructor(private fb: FormBuilder,
               private userService: UserService,
@@ -43,10 +44,11 @@ export class RegisterFormComponent {
         response => {
           console.log('User created:', response);
           this.registrationSuccess = true;
-
+          this.registrationError = ''; // Clear any previous error
         },
         error => {
           console.error('Error creating user:', error);
+          this.registrationError = 'Email already exists. Please use a different email.';
         }
       );
     }

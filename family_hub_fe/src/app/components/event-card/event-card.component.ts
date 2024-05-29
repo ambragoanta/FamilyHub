@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { EventModel } from "../../models/event.model";
 import { UserService } from "../../services/user.service";
 import { forkJoin, Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, switchMap } from 'rxjs/operators';
 import { ThemeService } from "../../services/theme.service";
 import { ConfirmationDialogComponent } from "../confirmation-dialog/confirmation-dialog.component";
 import { MatDialog } from "@angular/material/dialog";
@@ -22,6 +22,7 @@ export class EventCardComponent implements OnInit {
   @Output() myEventDeleted: EventEmitter<boolean> = new EventEmitter<boolean>();
   roles: string[] = [];
   showEditDeleteButtons: boolean = false;
+  userRole: string = '';
 
   constructor(private userService: UserService,
               protected themeService: ThemeService,
@@ -31,17 +32,35 @@ export class EventCardComponent implements OnInit {
   }
 
   ngOnInit() {
-    if (this.event) {
-      if (typeof this.event.dueTime === 'string') {
-        this.event.dueTime = this.formatDueTime(this.event.dueTime);
+    this.userService.getMe().pipe(
+      switchMap(user => {
+        this.userRole = user.role!;
+        if (this.event) {
+          if (typeof this.event.dueTime === 'string') {
+            this.event.dueTime = this.formatDueTime(this.event.dueTime);
+          }
+          if (this.event.users) {
+            const userObservables: Observable<string>[] = this.event.users.map(userId => this.getRole(userId));
+            return forkJoin(userObservables).pipe(
+              map(roles => {
+                this.roles = roles;
+                this.showEditDeleteButtons = roles.includes(this.userRole);
+                console.log('Edit/Delete Buttons Visibility:', this.showEditDeleteButtons);
+                return roles;
+              })
+            );
+          }
+        }
+        return [];
+      })
+    ).subscribe({
+      next: roles => {
+        console.log('Roles resolved after user:', roles);
+      },
+      error: err => {
+        console.error('Error in fetching user or roles:', err);
       }
-      if (this.event.users) {
-        const userObservables: Observable<string>[] = this.event.users.map(user => this.getRole(user));
-        forkJoin(userObservables).subscribe(roles => {
-          this.roles = roles;
-        });
-      }
-    }
+    });
   }
 
   formatDueTime(timeString: string): string {
@@ -85,7 +104,7 @@ export class EventCardComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result && this.event?.eventId !== undefined) {
-        this.eventService.deleteEvent(this.event.eventId).subscribe(result => {
+        this.eventService.getEvent(this.event.eventId).subscribe(result => {
           if(this.event){
             this.router.navigate(['/family-hub/edit-event', this.event.eventId]);
           }
