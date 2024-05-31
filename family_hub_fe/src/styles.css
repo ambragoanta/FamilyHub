@@ -26,6 +26,7 @@ body {
   --color1: #FFFFFF;
   --color2: #F8F8F8;
   --login-input-color: #1A1A1A;
+  --family-card: #e0e0e0;
 
   --navbar-height: 7rem;
 
@@ -41,7 +42,8 @@ body {
   --input-color:  #ffffff;
   --input-text-color: #f0f0f0;
   --color1:  #1A1A1A;
-  --color2: #151515
+  --color2: #151515;
+  --family-card: #3A3A3A;
 }
 
 .app-content {
