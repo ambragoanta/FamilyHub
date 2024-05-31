@@ -1,7 +1,7 @@
 <div class="event-card" [ngClass]="{'live': status === 'current', 'upcoming': status === 'upcoming', 'finished': status === 'finished'}">
   <div class="event-details">
     <span class="event-title">{{ event?.title }}</span>
-    <span class="event-time">{{ event?.dueTime }}</span>
+    <span class="event-time ml-1">{{ event?.dueTime }}</span>
     <div class="event-participants" [ngClass]="{'live-participants': status === 'current', 'upcoming-participants': status === 'upcoming', 'finished-participants': status === 'finished'}">
       <span>{{ event?.users?.length }}</span>&nbsp;
       <span *ngIf="event?.users?.length === 1">Participant</span>

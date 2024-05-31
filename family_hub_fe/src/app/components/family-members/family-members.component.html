@@ -1,4 +1,4 @@
-<app-mainframe [title]="title">
+<app-mainframe [title]="familyName + '\'s members'">
   <div *ngFor="let member of familyMembers">
     <app-family-member-card [member]="member"></app-family-member-card>
   </div>

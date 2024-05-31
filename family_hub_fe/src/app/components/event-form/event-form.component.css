@@ -38,4 +38,7 @@
   background: #32CD32;
 }
 
+::ng-deep.mat-mdc-select-value-text {
+  color: var(--main-text-color) !important;
+}
 

@@ -28,3 +28,6 @@ mat-label, .mat-mdc-input-element {
 .mat-mdc-input-element.mat-mdc-form-field-input-control::placeholder {
   color: var(--login-input-color) !important;
 }
+:host.mdc-text-field--outlined.mdc-text-field--invalid:not(.mdc-text-field--disabled) .mdc-text-field__input {
+  color: var(--login-input-color) !important;
+}

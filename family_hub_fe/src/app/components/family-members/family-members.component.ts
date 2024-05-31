@@ -8,7 +8,6 @@ import { UserService } from "../../services/user.service";
   styleUrls: ['./family-members.component.css']
 })
 export class FamilyMembersComponent implements OnInit{
-  title = "Family Members";
   familyMembers: User[] = [];
   familyName: string | undefined = '';
 
@@ -22,6 +21,7 @@ export class FamilyMembersComponent implements OnInit{
     this.userService.getFamilyMembers().subscribe({
       next: (users: User[]) => {
         this.familyMembers = users;
+        this.familyName = users[0].familyName;
       },
       error: (err) => {
         console.error('Error fetching family members:', err);

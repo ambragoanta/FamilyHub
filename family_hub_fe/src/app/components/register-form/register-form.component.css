@@ -37,3 +37,6 @@ input::placeholder {
   text-align: center;
 }
 
+:host .mdc-text-field--outlined.mdc-text-field--invalid:not(.mdc-text-field--disabled) .mdc-text-field__input{
+  color: var(--login-input-color) !important;
+}
