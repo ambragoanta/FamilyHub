@@ -61,7 +61,7 @@ export class ProfilePictureComponent implements OnInit{
   navigate(){
     const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
       width: '400px',
-      data: {message: 'Do you want to edit your profile?'}
+      data: {title: "Edit Profile", message: 'Do you want to edit your profile?'}
     });
 
     dialogRef.afterClosed().subscribe(result => {
